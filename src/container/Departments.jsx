@@ -28,7 +28,6 @@ const Departments = () => {
     });
   }, [])
 
-  console.log(departments)
   if(departments.length <= 0) {
    return( 
     <>
@@ -71,11 +70,11 @@ const Departments = () => {
           <tbody>
             {departments?.map((department) => (
               <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={department._id}>
-                <td scope="row" className="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white">
+                <td className="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white">
                   {department.name}
                 </td>
                 <td className="px-6 py-4">
-                  <a href={`/departmentdetails/${department._id}`} className="font-medium text-green-700 dark:text-green-500 hover:underline">Details</a>
+                  <a href={`/departmentdetails/${department.name}`} className="font-medium text-green-700 dark:text-green-500 hover:underline">Details</a>
                 </td>
                 <td className="px-6 py-4">
                   <a href={`/editdepartment/${department._id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
