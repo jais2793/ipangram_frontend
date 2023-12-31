@@ -28,7 +28,16 @@ const Employees = () => {
     });
   }, [])
 
-
+  if(employees.length <= 0) {
+    return( 
+    <>
+    <Link to='/createuser' className='absolute right-2 top-20 bg-black text-white  rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center'>
+        <IoMdAdd />
+    </Link>
+    <div className='text-center text-2xl font-base mt-10 '>No Employees yet</div>
+    </>
+    )
+   }
   return (
     <>
       <Link to='/createuser' className='absolute right-2 top-20 bg-black text-white  rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center'>
