@@ -70,7 +70,7 @@ const EditUser = () => {
         
       )}
       <div className="max-w-sm mx-auto">
-        <h3 className='mt-10 text-2xl text-bold text-center'>Edit User</h3>
+        <h3 className='mt-10 text-2xl text-bold text-center'>User Details / Edit</h3>
         <div className="mb-5">
           <label htmlFor="username" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">User Name</label>
           <input

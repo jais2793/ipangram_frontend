@@ -1,6 +1,6 @@
 import React from 'react'
 
-const EmployeeDetails = ({ User }) => {
+const UserDetails = ({ User }) => {
 
   return (
     <>
@@ -40,13 +40,12 @@ const EmployeeDetails = ({ User }) => {
                 {User.usertype === 0 ? 'Employee' : 'Manager'}
               </td>
               <td className="px-6 py-4">
-                {User.location}
+                {User.location ? User.location : 'none selected'}
               </td>
               {User.usertype === 1 && (
                 <td className="px-6 py-4">
                   <a href={`/edituser/${User.id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                 </td>
-
               )}
             </tr>
           </tbody>
@@ -56,4 +55,4 @@ const EmployeeDetails = ({ User }) => {
   )
 }
 
-export default EmployeeDetails
+export default UserDetails

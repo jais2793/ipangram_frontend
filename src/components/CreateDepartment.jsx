@@ -48,17 +48,17 @@ const CreateDepartment = () => {
       )}
       {updateMsg.length > 0 && (
         <div className='absolute top-20 w-full text-center'>
-          <h3 className=" font-semibold items-center text-center text-green-700 text-lg">{updateMsg}</h3>
+          <h3 className=" font-semibold items-center text-center text-green-700 text-lg">{updateMsg}, Redirecting</h3>
         </div>
 
       )}
       <div className="max-w-sm mx-auto">
         <h3 className='mt-10 text-2xl text-bold text-center'>Add Department</h3>
         <div className="mb-5">
-          <label htmlFor="username" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">Department Name</label>
+          <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">Department Name</label>
           <input
             type="text"
-            id="username"
+            id="name"
             className="bg-gray-200 border-gray-600  text-black text-base  text-semibold rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             placeholder="User Name"
             value={department}

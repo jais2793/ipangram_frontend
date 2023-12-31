@@ -9,7 +9,7 @@ const Departments = () => {
   const [departments, setDepartments] = useState(Array)
 
   const deleteDepartment = (id) => {
-    axios.delete('http://localhost:4000/departments/' + id , {
+    axios.delete('http://localhost:4000/departments/' + id, {
       headers: { "Content-Type": "application/json" }
     }).then((res) => {
       if (res.data.status) {
@@ -28,15 +28,15 @@ const Departments = () => {
     });
   }, [])
 
-  if(departments.length <= 0) {
-   return( 
-    <>
-    <Link to='/createdepartment' className='absolute right-2 top-20 bg-black text-white  rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center'>
-        <IoMdAdd />
-    </Link>
-    <div className='text-center text-2xl font-base mt-10 '>No Department yet</div>
-    </>
-   )
+  if (departments.length <= 0) {
+    return (
+      <>
+        <Link to='/createdepartment' className='absolute right-2 top-20 bg-black text-white  rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center'>
+          <IoMdAdd />
+        </Link>
+        <div className='text-center text-2xl font-base mt-10 '>No Department yet</div>
+      </>
+    )
   }
   return (
     <>
@@ -74,7 +74,7 @@ const Departments = () => {
                   {department.name}
                 </td>
                 <td className="px-6 py-4">
-                  <a href={`/departmentdetails/${department.name}`} className="font-medium text-green-700 dark:text-green-500 hover:underline">Details</a>
+                  <a href={`/departmentdetails/${department.name}`} className="font-medium text-green-600 dark:text-green-500 hover:underline">Details</a>
                 </td>
                 <td className="px-6 py-4">
                   <a href={`/editdepartment/${department._id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
@@ -89,7 +89,7 @@ const Departments = () => {
             ))}
 
           </tbody>
-          
+
         </table>
       </div>
     </>

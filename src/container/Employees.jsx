@@ -31,7 +31,7 @@ const Employees = () => {
   if(employees.length <= 0) {
     return( 
     <>
-    <Link to='/createuser' className='absolute right-2 top-20 bg-black text-white  rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center'>
+    <Link to='/createuser' className='z-10  absolute right-2 top-20 bg-black text-white  rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center'>
         <IoMdAdd />
     </Link>
     <div className='text-center text-2xl font-base mt-10 '>No Employees yet</div>
@@ -40,7 +40,7 @@ const Employees = () => {
    }
   return (
     <>
-      <Link to='/createuser' className='absolute right-2 top-20 bg-black text-white  rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center'>
+      <Link to='/createuser' className='z-10 absolute right-2 top-20 bg-black text-white  rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center'>
         <IoMdAdd />
       </Link>
 
@@ -64,7 +64,7 @@ const Employees = () => {
               {user.usertype === 1 && (
                 <>
                   <th scope="col" className="px-6 py-3">
-                    Edit
+                    Details/Edit
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Delete
@@ -89,7 +89,7 @@ const Employees = () => {
                   {employee.location}
                 </td>
                 <td className="px-6 py-4">
-                  <a href={`/edituser/${employee._id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                  <a href={`/edituser/${employee._id}`} className="font-medium text-green-600 dark:text-green-500 hover:underline">Details/Edit</a>
                 </td>
                 <td className="px-6 py-4">
                   <p onClick={() => {

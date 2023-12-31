@@ -61,7 +61,7 @@ const DepartmentDetails = () => {
                   {employee.location}
                 </td>
                 <td className="px-6 py-4">
-                  <a href={`/employeedetails/${employee._id}`} className="font-medium text-green-700 dark:text-green-500 hover:underline">Details</a>
+                  <a href={`/edituser/${employee._id}`} className="font-medium text-green-700 dark:text-green-500 hover:underline">Details/Edit User</a>
                 </td>
                 
               </tr>

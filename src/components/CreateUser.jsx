@@ -58,7 +58,7 @@ const CreateUser = () => {
       )}
       {updateMsg.length > 0 && (
         <div className='absolute top-20 w-full text-center'>
-          <h3 className=" font-semibold items-center text-center text-green-700 text-lg">{updateMsg}</h3>
+          <h3 className=" font-semibold items-center text-center text-green-700 text-lg">{updateMsg}, Redirecting</h3>
         </div>
 
       )}
