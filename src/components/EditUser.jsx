@@ -18,6 +18,7 @@ const EditUser = () => {
   });
 
   const [updateMsg, setUpdateMsg] = useState('')
+  const [errorMsg, setErrorMsg] = useState('')
 
   useEffect(() => {
     axios.get(`http://localhost:4000/employees/${id}`, {
@@ -32,42 +33,51 @@ const EditUser = () => {
   }, [id]);
 
   const updateUser = () => {
-    const params = JSON.stringify({
-      username: employee.username,
-      userpass: employee.userpass,
-      usertype: employee.usertype,
-      department: employee.department,
-      location: employee.location
-    })
-    axios.put(`http://localhost:4000/employees/${id}`,params, {
-      headers: { "Content-Type": "application/json" }
-    }).then((res) => {
-      if (res.data.status) {
-        setUpdateMsg(res.data.message)
-      }
-    });
+    if (employee.username.length > 0 && employee.username.length > 0 && employee.usertype >= 0 && employee.department.length > 0 && employee.location.length > 0) {
+      const params = JSON.stringify({
+        username: employee.username,
+        userpass: employee.userpass,
+        usertype: employee.usertype,
+        department: employee.department,
+        location: employee.location
+      })
+      axios.put(`http://localhost:4000/employees/${id}`, params, {
+        headers: { "Content-Type": "application/json" }
+      }).then((res) => {
+        if (res.data.status) {
+          setUpdateMsg(res.data.message)
+        }
+      });
+    } else {
+      setErrorMsg('Please fill all fields')
+    }
   };
 
-  if(employee == undefined) {
+  if (employee == undefined) {
     return (
       <>
-      <div className='text-center w-full h-lvh mt-10'>
-        <div className='text-2xl'>
-          404: User not found
-        </div>
-        <Link to="/" className='text-lg text-blue-600 hover:opacity-80'>Go to Home Page</Link>
-    </div >
-    </>
+        <div className='text-center w-full h-lvh mt-10'>
+          <div className='text-2xl'>
+            404: User not found
+          </div>
+          <Link to="/" className='text-lg text-blue-600 hover:opacity-80'>Go to Home Page</Link>
+        </div >
+      </>
 
     )
   }
   return (
     <>
       {updateMsg.length > 0 && (
-      <div className='absolute top-20 w-full text-center'>
-        <h3 className=" font-semibold items-center text-center text-green-700 text-lg">{updateMsg}</h3>
-      </div>  
-        
+        <div className='absolute top-20 w-full text-center'>
+          <h3 className=" font-semibold items-center text-center text-green-700 text-lg">{updateMsg}</h3>
+        </div>
+
+      )}
+      {errorMsg.length > 0 && (
+        <div className='absolute top-20 w-full text-center'>
+          <h3 className=" font-semibold items-center text-center text-red-700 text-lg">{errorMsg}</h3>
+        </div>
       )}
       <div className="max-w-sm mx-auto">
         <h3 className='mt-10 text-2xl text-bold text-center'>User Details / Edit</h3>

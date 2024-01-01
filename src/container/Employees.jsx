@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { IoMdAdd } from 'react-icons/io';
 
 const Employees = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('jsuser'));
 
   const [employees, setEmployees] = useState(Array)
 

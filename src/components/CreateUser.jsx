@@ -14,7 +14,7 @@ const CreateUser = () => {
   const [employee, setEmployee] = useState({
     username: '',
     userpass: '',
-    usertype: '',
+    usertype: 0,
     department: '',
     location: '',
   });
@@ -23,7 +23,7 @@ const CreateUser = () => {
 
   const addUser = () => {
     setIncorrectRegister(false)
-    if (employee.username.length > 0 && employee.username.length > 0 && employee.usertype.length > 0 && employee.department.length > 0 && employee.location.length > 0) {
+    if (employee.username.length > 0 && employee.username.length > 0 && employee.usertype >= 0 && employee.department.length > 0 && employee.location.length > 0) {
       const params = JSON.stringify({
         username: employee.username,
         userpass: employee.username,
@@ -44,6 +44,7 @@ const CreateUser = () => {
       });
     } else {
       setIncorrectRegister(true)
+      setIncorrectMsg('Please fill all the fields');
     }
   };
 
@@ -102,7 +103,7 @@ const CreateUser = () => {
             onChange={(e) => setEmployee({ ...employee, usertype: e.target.value })}
             className="outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer"
           >
-            <option value="others" className="sm:text-bg bg-white">Select User Type</option>
+            <option className="sm:text-bg bg-white" disabled>Select User Type</option>
             <option className="text-base border-0 outline-none capitalize bg-white text-black " value='0' >
               Employee
             </option>

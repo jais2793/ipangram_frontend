@@ -18,8 +18,8 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  if (localStorage.getItem("user")) {
-    localStorage.removeItem("user");
+  if (localStorage.getItem("jsuser")) {
+    localStorage.removeItem("jsuser");
   }
 
   const registerUser = async () => {

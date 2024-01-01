@@ -11,8 +11,8 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  if (localStorage.getItem("user")) {
-    localStorage.removeItem("user")
+  if (localStorage.getItem("jsuser")) {
+    localStorage.removeItem("jsuser")
   }
 
   const loginUser = async () => {
@@ -26,7 +26,7 @@ const Login = () => {
         headers: { "Content-Type": "application/json" }
       }).then((res) => {
         if (res.data.status) {
-          localStorage.setItem('user', JSON.stringify({ id: res.data.user._id, username: res.data.user.username,department: res.data.user.department, usertype: res.data.user.usertype, location: res.data.user.location }))
+          localStorage.setItem('jsuser', JSON.stringify({ id: res.data.user._id, username: res.data.user.username,department: res.data.user.department, usertype: res.data.user.usertype, location: res.data.user.location }))
           navigate('/')
         } else {
           setIncorrectSignup(true)

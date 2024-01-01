@@ -3,7 +3,7 @@ import { Navigate} from 'react-router-dom'
 import {Navbar} from './index'
 
 const PrivateRoute = ({ children }) => {
-    const user = JSON.parse(localStorage.getItem('user'))
+    const user = JSON.parse(localStorage.getItem('jsuser'))
     const url = window.location.href.split('/');
     if(user.usertype === 0 && url[3].length > 0) {
         window.location.href = '/'

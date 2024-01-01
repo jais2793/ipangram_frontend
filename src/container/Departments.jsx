@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { IoMdAdd } from 'react-icons/io';
 
 const Departments = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('jsuser'));
 
   const [departments, setDepartments] = useState(Array)
 
