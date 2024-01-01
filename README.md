@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# NOTE: This is a test build, Make sure your localstorage doesn't have any item with name 'jsuser' set, if so start app by http://localhost:3000/login 
+
+# Getting Started with IPANGRAM FRONTEND
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
